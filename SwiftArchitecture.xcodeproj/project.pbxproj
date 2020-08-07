@@ -12,6 +12,8 @@
 		603640FC24DDD41500154C08 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603640FB24DDD41500154C08 /* LoginResponse.swift */; };
 		603640FE24DDD42C00154C08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603640FD24DDD42C00154C08 /* LoginView.swift */; };
 		6036410024DDD67D00154C08 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603640FF24DDD67D00154C08 /* LoginViewModel.swift */; };
+		6036410424DDDE0100154C08 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6036410324DDDE0100154C08 /* DBManager.swift */; };
+		6036410624DDDE3F00154C08 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6036410524DDDE3F00154C08 /* RealmManager.swift */; };
 		60C322E524DDB737005ACDE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C322E424DDB737005ACDE5 /* AppDelegate.swift */; };
 		60C322E724DDB737005ACDE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C322E624DDB737005ACDE5 /* SceneDelegate.swift */; };
 		60C322E924DDB737005ACDE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C322E824DDB737005ACDE5 /* ContentView.swift */; };
@@ -52,6 +54,8 @@
 		603640FB24DDD41500154C08 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		603640FD24DDD42C00154C08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		603640FF24DDD67D00154C08 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6036410324DDDE0100154C08 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		6036410524DDDE3F00154C08 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		60C322E124DDB737005ACDE5 /* SwiftArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C322E424DDB737005ACDE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C322E624DDB737005ACDE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 			path = Posts;
 			sourceTree = "<group>";
 		};
+		6036410224DDDDE000154C08 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6036410524DDDE3F00154C08 /* RealmManager.swift */,
+				6036410324DDDE0100154C08 /* DBManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		60C322D824DDB737005ACDE5 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +221,7 @@
 		60C322E324DDB737005ACDE5 /* SwiftArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				6036410224DDDDE000154C08 /* Database */,
 				603640F724DDD3DD00154C08 /* Modules */,
 				60C3231D24DDBAAF005ACDE5 /* NetworkManager */,
 				60C322E424DDB737005ACDE5 /* AppDelegate.swift */,
@@ -519,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6036410624DDDE3F00154C08 /* RealmManager.swift in Sources */,
 				60C3231B24DDB993005ACDE5 /* PostViewModel.swift in Sources */,
 				60C322E524DDB737005ACDE5 /* AppDelegate.swift in Sources */,
 				6036410024DDD67D00154C08 /* LoginViewModel.swift in Sources */,
@@ -526,6 +541,7 @@
 				60C3231924DDB987005ACDE5 /* PostModel.swift in Sources */,
 				60C3231F24DDBAC6005ACDE5 /* NetworkManager.swift in Sources */,
 				60C322E724DDB737005ACDE5 /* SceneDelegate.swift in Sources */,
+				6036410424DDDE0100154C08 /* DBManager.swift in Sources */,
 				60C3231624DDB926005ACDE5 /* PostResponse.swift in Sources */,
 				603640F524DDCE8900154C08 /* NetworkLayerMoya.swift in Sources */,
 				603640FE24DDD42C00154C08 /* LoginView.swift in Sources */,

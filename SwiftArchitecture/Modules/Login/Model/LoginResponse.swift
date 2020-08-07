@@ -29,8 +29,6 @@ class LoginUserModel: Object,Decodable {
     @objc dynamic var deleted_at : String?
     @objc dynamic var country : String?
     @objc dynamic var city : String?
-    //@objc dynamic var image_urls : Image_urls?
-    //@objc dynamic var question : [String]?
 
     enum CodingKeys: String, CodingKey {
 
@@ -53,8 +51,6 @@ class LoginUserModel: Object,Decodable {
         case deleted_at = "deleted_at"
         case country = "country"
         case city = "city"
-        //case image_urls = "image_urls"
-        //case question = "question"
     }
 
    public required convenience init(from decoder: Decoder) throws {
@@ -79,8 +75,6 @@ class LoginUserModel: Object,Decodable {
         deleted_at = try values.decodeIfPresent(String.self, forKey: .deleted_at)
         country = try values.decodeIfPresent(String.self, forKey: .country)
         city = try values.decodeIfPresent(String.self, forKey: .city)
-       // image_urls = try values.decodeIfPresent(Image_urls.self, forKey: .image_urls)
-        //question = try values.decodeIfPresent([String].self, forKey: .question)
     }
 }
 

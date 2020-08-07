@@ -15,8 +15,10 @@ class LoginViewModel: ObservableObject {
     }
     
     private func LoginUser() {
-        NetworkManager.loadLoginApi(emailText: "user002@mailinator.com", passwordText:"12345678") { (posts) in
-            print(posts)
+        NetworkManager.loadLoginApi(emailText: "user002@mailinator.com", passwordText:"12345678") { (user) in
+            DBManager.persistUserModelObject(realmObject: user ?? LoginUserModel())
+            
+            print(DBManager.getUserObject())
         }
         
     }

@@ -32,37 +32,37 @@ class NetworkManager {
     }
     
     // MARK:- LOAD LOGIN API
-        static func loadLoginApi(emailText:String, passwordText:String,  completion: @escaping (LoginUserModel?) -> ()){
-            self.provider.request(.login(email: emailText, password: passwordText)) { (result) in
-                switch result{
-                case .success(let response):
-                    print(response)
-                    do {
-                        let responseResult = try response.mapJSON()
-                        let decoder = JSONDecoder()
-                        if let jsonResponse = responseResult as? [String:Any] {
-                            if let response = jsonResponse["response"] as? [String:Any] {
-                               if let data = response["data"] as? [String:Any] {
-                                   print(data)
+    static func loadLoginApi(emailText:String, passwordText:String,  completion: @escaping (LoginUserModel?) -> ()){
+        self.provider.request(.login(email: emailText, password: passwordText)) { (result) in
+            switch result{
+            case .success(let response):
+                print(response)
+                do {
+                    let responseResult = try response.mapJSON()
+                    let decoder = JSONDecoder()
+                    if let jsonResponse = responseResult as? [String:Any] {
+                        if let response = jsonResponse["response"] as? [String:Any] {
+                            if let data = response["data"] as? [String:Any] {
+                                print(data)
                                 let jsonData = try? JSONSerialization.data(withJSONObject:data)
                                 let getData = try decoder.decode(LoginUserModel.self, from: jsonData!)
-                                print(getData)
-                               }
+                                completion(getData)
                             }
-                            
                         }
                         
-                        
-                        
-                        
-                    } catch{
-                        completion(nil)
                     }
-                case .failure(let error):
+                    
+                    
+                    
+                    
+                } catch{
                     completion(nil)
-                    print(error.localizedDescription)
                 }
+            case .failure(let error):
+                completion(nil)
+                print(error.localizedDescription)
             }
         }
+    }
     
 }
